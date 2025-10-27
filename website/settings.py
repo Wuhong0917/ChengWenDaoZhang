@@ -19,8 +19,8 @@ SECRET_KEY = os.environ['SECRET_KEY_YO']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['chengwendaozhang-production.up.railway.app','https://chengwendaozhang-production.up.railway.app']
-CSRF_TRUSTED_ORIGINS = ['https://chengwendaozhang-production.up.railway.app']
+ALLOWED_HOSTS = ['https://cwdaozhang.space','cwdaozhang.space','chengwendaozhang-production.up.railway.app','https://chengwendaozhang-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://cwdaozhang.space', 'https://chengwendaozhang-production.up.railway.app']
 
 
 # Application definition
