@@ -1,0 +1,43 @@
+<!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'home' %}">诚文道人-道教文化</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        
+                        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">关于我们</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'service' %}">弘道服务</a></li>   
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="{% url 'all_videos' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">视频分类</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'all_videos' %}" >全部视频</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                {% for tk_category in tk_categories %}
+                                    <li><a class="dropdown-item" href="{% url 'category_videos' tk_category.name %}">{{ tk_category.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>                    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="{% url 'blogs' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">部落格</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'blogs' %}">全部文章</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                {% for blog_category in blog_categories %}
+                                    <li><a class="dropdown-item" href="{% url 'category_posts' blog_category.name %}">{{ blog_category.name }}</a></li>
+                                {% endfor %}
+                                
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'shijie' %}">人物介绍</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'contactus' %}">联络方式</a></li>
+                        
+                        {% if user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'create_post' %}">写文章</a></li>
+                        {% endif %}
+
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>

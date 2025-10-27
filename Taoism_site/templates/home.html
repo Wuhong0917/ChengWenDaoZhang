@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<audio autoplay loop>
+  <source src="{% static 'assets/Chinese.mp3' %}" type="audio/mpeg">
+  Your browser doesn’t support audio.
+</audio>
+
+
+
+<!-- Header - set the background image for the header in the line below-->
+<header class="py-5 bg-image-full" style="background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1600x900')">
+    <div class="text-center my-5">
+        <img class="img-fluid.max-width: 100%" src="{% static 'assets/Toaist_image.jpg' %}" alt="..." />
+    </div>
+</header>
+<!-- Content section-->
+<section class="py-1">
+    <div class="container my-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <center>
+                <h2>欢迎踏入清净无为之地</h2>
+                </center>
+                <br/>
+                <h4><strong>站长寄语：</strong></h4>
+                <p class="lead">福生无量天尊！诸位善信、道友，欢迎您的到来。</p>
+
+                <p class="lead">贫道于此红尘中一隅，辟此清静之地，旨在接引有缘，共参玄理。道法自然，非独善其身之术，更是普度众生之舟。设立此站，唯愿将先贤智慧、道家精髓，与天下有缘人共享，让古老的东方智慧，如清泉般流入现代生活，涤荡烦忧，启迪心性</p>
+
+
+                <hr>
+                <br/>
+                <h4><strong>简述道教历史</strong></h4>
+
+                <p class="lead">道教，是根植于中华大地的古老宗教，尊奉“道”为最高信仰。追本溯源，道教思想可上溯至黄帝的“天人合一”理念与老子的《道德经》，以“道”为宇宙万物的本源与规律。东汉时期，祖天师张道陵于鹤鸣山创立“五斗米道”，标志着道教有组织教团的正式形成。历经千年，道教主要分为全真道与正一道两大脉。</p>
+
+
+                <p class="lead">道教不仅是一种信仰，更是一种生活哲学。它深深影响了中华文化的方方面面，从中医养生、太极武术，到风水建筑、文学艺术，处处可见其智慧的闪光。</p>
+
+
+                <p class="lead">总而言之，道教是一门倡导“尊道贵德、清静无为、顺其自然、长生久视”的实践哲学与生命科学。</p>
+
+
+                <hr>
+                <br/>
+                <h4><strong>走入生活：道在日用</strong></h4>
+
+                <p class="lead">道，并非遥不可及。它存在于一呼一吸之间，存在于行住坐卧之中。</p>
+
+                <p class="lead">万法归宗，终归于道。此地乃一扇门，愿您能由此入门，窥见道之玄妙；此地亦是一座桥，愿您能借此桥，通向内心的安宁与生命的圆融。</p>
+
+                <p class="lead">福生无量天尊！愿您在此有所收获，福寿康宁。</p>
+ 
+
+                <hr>
+                <br/>
+
+
+
+                <p class="mb-0"></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- what's new-->
+
+<div class="whats-new-section">
+    <div class="lead">
+        <div class="whats-new-content">
+            <div class="new-item">   
+                <div class="new-item-info">
+                    <span class="new-item-icon">📝</span><strong>最新文章:</strong>
+                    <a href="{% url 'post_detail' latest_post.id %}">{{ latest_post.title }}</a>                   
+                </div>
+            </div>
+            <div class="new-item">
+                
+                <div class="new-item-info">
+                    <span class="new-item-icon">🎬</span><strong>最新视频:</strong> 
+                    <a href="{% url 'all_videos' %}">{{ latest_video.title }}</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

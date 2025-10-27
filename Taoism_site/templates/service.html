@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<audio autoplay loop>
+  <source src="{% static 'assets/Chinese.mp3' %}" type="audio/mpeg">
+  Your browser doesn’t support audio.
+</audio>
+
+
+
+<!-- Header - set the background image for the header in the line below-->
+<header class="my-0 bg-image-full" style="background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1600x900')">
+    <div class="text-center my-5">
+        <img class="img-fluid.max-width: 100%" src="{% static 'assets/Toaist_image.jpg' %}" alt="..." />
+    </div>
+</header>
+<!-- Content section-->
+<section class="py-0">
+    <div class="container my-0">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <center>
+                <h2 class="mb-0"><strong>弘道服务</strong></h2>
+                </center>
+                <br/>
+                <h4><strong>道务服务：以道为宗，以缘为度</strong></h4>
+                <p class="lead">为方便十方善信，贫道及同道愿提供以下服务，以期广结善缘，普济群生。</p>
+                <br/>
+                <hr>
+                <br/>
+
+                <h4><strong>一、 宗教仪式与法事</strong></h4>
+
+                <img src="{% static 'assets/fahui.jpg' %}" class="img-fluid" alt="...">
+
+
+                <p class="mb-0"><strong>祈福禳灾：</strong></p>
+                <p class="lead">为个人、家庭或企业举行祈福法会，祈求平安顺遂，事业昌隆。</p>
+                
+                <p class="mb-0"><strong>超度亡灵：</strong></p>
+                <p class="lead">依科演法，超度先远宗亲及各类亡灵，使其离苦得乐，慰藉生者。</p>
+             
+                <p class="mb-0"><strong>安神位、净宅：</strong></p>
+                <p class="lead">依据风水原理，为家居或办公环境进行净化与调整，营造和谐气场。</p>
+
+
+                <center><p>.........</p></center>                
+                <br/>
+
+
+                <h4><strong>二、 个人咨询与指点</strong></h4>
+
+                <img src="{% static 'assets/bazi.jpg' %}" class="img-fluid" alt="...">
+
+
+                <p class="mb-0"><strong>八字命理咨询：</strong></p>
+                <p class="lead">分析个人命局特点，知命而用，为人生规划提供参考。</p>
+                
+                <p class="mb-0"><strong>道家心理疏导：</strong></p>
+                <p class="lead">运用道家“顺其自然”、“少私寡欲”的智慧，帮助现代人缓解焦虑、压力，重获内心平静。</p>
+    
+
+                <center><p>.........</p></center>                  
+                <br/>
+
+
+                <h4><strong>三、 道家文化用品结缘</strong></h4>
+
+                <img src="{% static 'assets/lingwu.jpg' %}" class="img-fluid" alt="...">
+
+
+                <p class="mb-0"><strong>灵物佩戴：</strong></p>
+                <p class="lead">提供如太极服、沉香、经书、符箓（如护身符）等道家文化用品，与大众结缘，方便修行与收藏。</p>
+
+                
+            
+                <center><p>.........</p></center>                   
+                <br/>
+
+
+                <h4><strong>四、 丹药与内丹修炼</strong></h4>
+
+                <img src="{% static 'assets/neidan.jpg' %}" class="img-fluid" alt="...">
+
+
+                <p class="mb-0"><strong>性命双修：</strong></p>
+                <p class="lead">此乃道家传承数千年的核心养生修真体系，旨在通过内在修炼与外在滋养，达到强身健体、延年益寿、乃至天人合一的境界。</p>
+
+
+                <p class="mb-0"><sub><strong>【特别声明】</strong><br/>
+                    所传授的“丹药”知识及提供的相关服务，完全侧重于传承文化与养生保健。我们所分享的丹方、药膳均为纯天然草本配方，经过千年实践验证，安全无毒，旨在调理亚健康、增强体质。
+                    <br/>
+                    我们明确反对并严禁服用任何含有重金属或剧毒物质的所谓“外丹”。内丹修炼需在专业师傅指导下循序渐进，不可盲目自学。所有养生建议不能替代专业医疗诊断，如有疾病，请务必及时就医。
+                </sub></p>
+
+
+                <br/>
+                <hr>
+                <br/>
+
+                 <p class="lead">诸位若有困惑，欢迎随时来找贫道聊聊。道法虽深，亦在日用平常之中。
+                 </p>
+
+                <p class="lead"><center><a href="{% url 'contactus' %}">联络方式</a></center></p>
+
+
+
+
+
+                <p class="mb-0"></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Image element - set the background image for the header in the line below-->
+
+<!-- Content section-->
+
+
+{% endblock %}

@@ -1,0 +1,2 @@
+web: gunicorn Taoism_site.wsgi --log-file
+web: python manage.py migrate && gunicorn Taoism_site.wsg

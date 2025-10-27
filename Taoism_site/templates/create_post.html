@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<audio autoplay loop>
+  <source src="{% static 'assets/Chinese.mp3' %}" type="audio/mpeg">
+  Your browser doesn’t support audio.
+</audio>
+
+{% block content %}
+<div class="post-card">
+    <center>
+    <h1 class="post-title">新文章</h1>
+    </center>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="title" class="form-control" placeholder="文章标题" value="{{ form.title.value|default:'' }}" required>
+        <textarea name="content" class="form-control" placeholder="文章内容" rows="10" required>{{ form.content.value|default:'' }}</textarea>
+        <textarea name="excerpt" class="form-control" placeholder="文章摘要（可选）" rows="3">{{ form.excerpt.value|default:'' }}</textarea>
+        <select name="category" class="form-control" required>
+            <option value="">选择分类</option>
+            {% for category in blog_categories %}
+            <option value="{{ category.id }}" {% if form.category.value == category.id %}selected{% endif %}>{{ category.name }}</option>
+            {% endfor %}
+        </select>
+
+        <br/><br/>
+        <center>
+            <button type="submit" class="btn-btn-secondary">发布文章</button>
+        </center>
+    </form>
+</div>
+{% endblock %}

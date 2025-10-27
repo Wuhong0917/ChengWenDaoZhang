@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<audio autoplay loop>
+  <source src="{% static 'assets/Chinese.mp3' %}" type="audio/mpeg">
+  Your browser doesn’t support audio.
+</audio>
+
+
+
+
+<div class="posts">
+    {% for post in page_obj %}
+    <article class="post-card">
+        <h2 class="post-title">
+            <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+        </h2>
+        <div class="post-meta">
+            <span>分享者: {{ post.author.last_name }}{{post.author.first_name}}</span> | 
+            <span>发布时间: {{ post.created_at|date:"Y-m-d" }}</span> | <br/>
+            <span>分类: <a href="{% url 'category_posts' post.category.name %}">{{ post.category.name }}</a></span>
+        </div>
+        <div class="post-excerpt">
+            {% if post.excerpt %}
+                {{ post.excerpt|safe }}
+            {% else %}
+                {{ post.content|striptags|truncatewords:50|safe }}
+            {% endif %}
+        </div>
+        <a href="{% url 'post_detail' post.pk %}" class="read-more">阅读全文 →</a>
+    </article>
+    {% empty %}
+    <div class="post-card">
+        <p>暂无文章</p>
+    </div>
+    {% endfor %}
+</div>
+
+{% if page_obj.has_other_pages %}
+<nav>
+    <ul class="pagination">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}">上一页</a></li>
+        {% endif %}
+        
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <li class="current"><span>{{ num }}</span></li>
+            {% else %}
+            <li><a href="?page={{ num }}">{{ num }}</a></li>
+            {% endif %}
+        {% endfor %}
+        
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}">下一页</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
+{% endblock %}
