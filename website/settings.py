@@ -14,13 +14,13 @@ load_dotenv()
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure--@dm@76!&t@m%x^a5l!ut)1a8x9+7+vem0v5wni6@3)!)n5idd'
-SECRET_KEY = os.environ.get('SECRET_KEY_YO')
+SECRET_KEY = os.environ['SECRET_KEY_YO']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-CSRF_TRUSTED_ORIGINS = []
+ALLOWED_HOSTS = ['chengwendaozhang-production.up.railway.app','https://chengwendaozhang-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://chengwendaozhang-production.up.railway.app']
 
 
 # Application definition
@@ -77,7 +77,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': os.environ.get('DB_PASSWORD_YO'),
+        'PASSWORD': os.environ['DB_PASSWORD_YO'],
         'HOST': 'shortline.proxy.rlwy.net',
         'PORT': '20511',
     }
